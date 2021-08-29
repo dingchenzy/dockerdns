@@ -71,4 +71,15 @@ https://github.com/devplayer0/docker-net-dhcp                       # docker dhc
 
 ## 实现的内容
 
-调研了技术，必须实现 dns 的自动识别 hosts 文件变化然后动态的就会重载配置
+1. 调研了技术，必须实现 dns 的自动识别 hosts 文件变化然后动态的就会重载配置
+2. 解决了多个容器的 ip 冲突问题
+
+最终想要实现使用的 dns 技术
+
+1. 根目录下放置的 godns
+
+实现的理想目标
+
+能够通过 docker-client 动态的识别到主机上的容器建立，并且能够实时将创建的容器上的容器名以及容器的 ip 地址添加到 godns 运行主机上的 hosts 文件中实现 dns 解析
+
+
