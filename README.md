@@ -2,7 +2,7 @@
 多主机互通
     可以直接通过指路由的方式实现互通（网段要求要不同）
 
-
+```bash
 创建 docker 自定义网桥
     创建网桥
     brctl addbr bridge0
@@ -26,10 +26,10 @@ docker network create -d macvlan \
   --ipam-driver=dhcp \
   -o parent=ens33 \
   --ipam-opt dhcp_interface=ens33 bridge0 
+```
 
 
-
-
+```bash
 创建网桥
  1752  ip link add bridge0 type bridge
  1753  ip link set bridge0 up
@@ -51,3 +51,8 @@ docker network create -d macvlan \
 
 启动带 dhcp-client 的容器
  1765  docker run -it --network bridge0-dhcp --name busybox02 --rm busybox sh
+```
+
+```http
+https://gist.github.com/nerdalert/3d2b891d41e0fa8d688c              # dhcp 插件技术
+```
