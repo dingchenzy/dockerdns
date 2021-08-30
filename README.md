@@ -30,6 +30,9 @@ docker network create -d macvlan \
 
 
 ```bash
+安装 plugin 
+ docker plugin install ghcr.io/devplayer0/docker-net-dhcp:release-linux-amd64
+
 创建网桥
  1752  ip link add bridge0 type bridge
  1753  ip link set bridge0 up
@@ -82,4 +85,9 @@ https://github.com/devplayer0/docker-net-dhcp                       # docker dhc
 
 能够通过 docker-client 动态的识别到主机上的容器建立，并且能够实时将创建的容器上的容器名以及容器的 ip 地址添加到 godns 运行主机上的 hosts 文件中实现 dns 解析
 
+# 2021-8-30
+
+## 实现内容
+
+学会使用 docker client 能够取出 ip 和 container name
 
