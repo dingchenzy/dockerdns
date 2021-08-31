@@ -1,0 +1,5 @@
+dohost:
+  - "192.168.2.10:2333"
+  - "192.168.2.12:2333"
+donetwork: "dhcp-bridge"    # 网络模式
+hostfilepath: "./dockerdns.hosts"
