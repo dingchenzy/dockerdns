@@ -51,6 +51,6 @@ func Go() {
 	allcontainers.Lock.Wait()
 	for {
 		time.Sleep(time.Second * 1)
-		// fmt.Printf("%#v\n", controllers.AllContainerIPName)
+		fmt.Printf("%#v\n", controllers.AllContainerIPName)
 	}
 }

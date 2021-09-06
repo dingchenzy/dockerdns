@@ -3,6 +3,7 @@ package controllers
 import (
 	"context"
 	"log"
+	"strings"
 	"sync"
 
 	"github.com/docker/docker/api/types"
@@ -25,7 +26,7 @@ func (a *AllContainer) AppendContainerValue(j types.ContainerJSON) bool {
 	if j.State.Running {
 		if _, ok := AllContainerIPName[j.Name]; !ok {
 			ipname.ContainerIP = j.NetworkSettings.Networks[a.Donetwork].IPAddress
-			ipname.ContainerName = j.Name
+			ipname.ContainerName = strings.TrimPrefix(j.Name, "/")
 			ipname.Status = j.State.Running
 			AllContainerIPName[j.Name] = ipname
 			return true
